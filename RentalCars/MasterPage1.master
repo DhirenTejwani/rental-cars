@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage1.master.cs" Inherits="MasterPage1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>RENTAL CARS</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:bundlereference runat="server" path="~/css_main/bootstrap.min.css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="#">Rental Cars</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a runat="server" href="~/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        </asp:LoginView>
+                </div>
+            </div>
+        </div>
+
+        <%--FROM HERE--%>
+    <%--<link href="/css_main/bootstrap.min.css" rel="stylesheet">--%>
+
+    <div class="mainTitle">
+	<div class="container">
+	<h1>RENTAL CARS</h1>
+	<p>
+	Car le lijiye!
+	</p>
+	</div>
+	</div>
+
+        <div class="container marketing">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="/images/nepali-momo.png" alt="Generic placeholder image">
+          <h2>Nepalese MOMO</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies</p>
+          <p><a class="btn btn-default" href="#" role="button">&pound; 2.2 Add to cart &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="/images/burger.png" alt="Generic placeholder image">
+          <h2>Burger</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+          <p><a class="btn btn-default" href="#" role="button">&pound;5 Add to cart &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+		  <img class="img-circle" src="/images/gorkha-special-chicken.png" alt="Lam Tikka">
+          <h2>Gurkha Chicken</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. </p>
+          <p><a class="btn btn-default" href="#" role="button">&pound;4 Add to cart &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+	</div>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Rental Cars</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
